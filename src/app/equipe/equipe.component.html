@@ -1,0 +1,69 @@
+<app-menu></app-menu> 
+<div class="card"></div>
+<div class="card"> <br>
+    <mat-toolbar color="primary">
+      <h1>{{title}}</h1>
+    </mat-toolbar>
+    <hr> </div>
+      <div class="card-body">
+      <form>
+      <input  type="hidden"  class="form-control" formControlName="id">
+      <input  type="hidden"  class="form-control" formControlName="codeEnseignant">
+     
+      <div class="form-group">
+          <label><strong>ID : </strong></label>
+          <input  type="text"  class="form-control" formControlName="ID" id="ID" readonly>
+      </div>  
+      
+      <div class="form-group">
+        <label>Nom d'equipe</label>
+      <input  type="text"  class="form-control" formControlName="NomEquipe"  id="NomEquipe">
+      </div>
+      <div class="form-group">
+        <label>Nombre d'equipe</label>
+      <input  type="text"  class="form-control" formControlName="NombreEquipe"  id="NombreEquipe">
+      </div>
+      <div class="form-group">
+        <label>Nom de projet</label>
+      <input  type="text"  class="form-control" formControlName="NomProjet"  id="NomProjet">
+      </div>
+      
+      
+      
+      
+      <table class="table table-borderless">
+        <thead class="thead-light">
+          <th>ID</th>
+          <th>Nom d'equipe</th>
+          <th>Nombre d'equipe</th>
+          <th>Nom de projet</th> 
+          <th>
+            <a class="btn btn-sm btn-success text-black">
+                <i class="icon-add_box"></i>Ajouter </a>
+          </th>
+        </thead>
+        <tbody>
+            <tr >
+                <td class="font-italic text-center" colspan="5">
+                  Aucune Note sélectionnée ...
+                </td>
+              </tr>
+          <tr>
+          <td>
+            <a class="btn btn-sm btn-info text-white" >
+              <i class="fa fa-pencil-square-o"></i></a>
+          <a class="btn btn-sm btn-danger text-white ml-1" >
+              <i class="fa fa-trash-o"></i></a>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+      
+      <div class="form-group">
+        <button type="submit" class="btn btn-primary"><i class="icon-database"></i> Valider</button>
+        <a class="btn btn-outline-dark ml-1" routerLink="/emplois"><i class="icon-folder-plus"></i> Liste </a>
+      </div>
+      </form>
+      </div>
+  <app-footer></app-footer>
+    

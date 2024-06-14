@@ -1,0 +1,60 @@
+<app-menu></app-menu>
+<mat-toolbar color="primary">
+    <h1>{{title}}</h1>
+  </mat-toolbar>
+  <hr>
+<div class="card">
+<div class="card-body">
+    <div class="right">
+
+        <a class="btn btn-outline-success" >
+            <i class="icon-add_box"></i>Ajout</a>
+        <hr>
+
+        <input type="text" class="form-control bg-light border-5 small"
+            placeholder="Recherche..." aria-label="Search" aria-describedby="basic-addon2">
+
+    </div>
+
+    <hr>
+
+
+
+
+    <div>
+        <div class="table-responsive">
+            <table class="table table-bordered table-responsive-sm table-responsive-md table-responsive-lg">
+                <thead>
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Nom d'équipe</th>
+                        <th scope="col">Nombre d'équipe </th>
+                        <th scope="col">Titre de projet </th>
+                        <th class="text-center" colspan="2">Action</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let item ">
+                        <td>{{item.ID}}</td>
+                        <td>{{item.NomEquipe}}</td>
+                        <td>{{item.NombreEquipe}}</td>
+                        <td>{{item.TitreP}}</td>
+                        <td colspan="2">
+                            <div class="btn-toolbar ">
+
+                                <button class="btn btn-warning">
+                                    <i class="fa fa-pencil-square-o"></i></button>
+                                <div class="espace"></div>
+                                <button class="btn btn-danger " >
+                                    <i class="fa fa-trash-o"></i></button>
+
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+</div> <app-footer></app-footer>

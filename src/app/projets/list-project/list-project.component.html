@@ -1,0 +1,66 @@
+<app-menu></app-menu> 
+<div class="card"></div>
+<div class="card"> <br>
+    <mat-toolbar color="primary">
+      <h1>{{title}}</h1>
+    </mat-toolbar>
+    <hr> </div>
+<div class="card">
+        
+    <div class="card-body">
+        <div class="right">
+            <a class="btn btn-outline-success" (click)="addProjet()">
+              <i class="icon-add_box"></i>Ajout</a>
+              <hr>
+              <input type="text" [(ngModel)]="SearchText" class="form-control bg-light border-5 small"
+              placeholder="Recherche..." aria-label="Search" aria-describedby="basic-addon2">
+            </div>
+
+        <hr>
+
+
+
+
+        <div>
+            <div class="table-responsive">
+                <table class="table table-bordered table-responsive-sm table-responsive-md
+   table-responsive-lg">
+                    <thead>
+                        <tr>
+                            <th scope="col">ID</th>
+                            <th scope="col">Nom du projet</th>
+                            <th scope="col">Date de début </th>
+                            <th scope="col">Date de fin </th>
+                            <th scope="col">Description </th>
+                            <th scope="col">Responsable</th>
+                            <th class="text-center" colspan="2">Action</th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let item ">
+                            <td>{{item.ID}}</td>
+                            <td>{{item.NomProjet}}</td>
+                            <td>{{item.DateD}}</td>
+                            <td>{{item.DateF}}</td>
+                            <td>{{item.Description}}</td>
+                            <td>{{item.Responsable}}</td>
+                            <td colspan="2">
+                                <div class="btn-toolbar ">
+
+                                    <button class="btn btn-warning">
+                                        <i class="fa fa-pencil-square-o"></i></button>
+                                    <div class="espace"></div>
+                                    <button class="btn btn-danger " >
+                                        <i class="fa fa-trash-o"></i></button>
+
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<app-footer></app-footer>

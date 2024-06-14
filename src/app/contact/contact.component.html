@@ -1,0 +1,53 @@
+
+<app-menu></app-menu>
+
+<head>
+  <style>
+    .center-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .card {
+      width: 100%;
+      max-width: 500px;
+    }
+  </style>
+</head>
+<body>
+  <div class="center-container">
+    <div class="col-xl-6 col-lg-6 col-md-12 col-sm-6 col-md-6">
+      <form>
+        <div class="card m-0">
+          <div class="card-header">
+              <h1>Contactez Nous</h1>
+            <hr>
+            <div class="card-sub-title">Comment pouvons-nous vous aider ?</div>
+          </div>
+          <div class="card-body">
+            <div class="form-group">
+              <input type="text" class="form-control" id="name" name="name" placeholder="Nom" required="">
+            </div>
+            <div class="form-group">
+              <input type="email" class="form-control" id="email" name="email" placeholder="Email" required="">
+            </div>
+            <div class="form-group">
+              <input type="number" class="form-control" id="mobile" name="mobile" placeholder="Numéro de téléphone" required="">
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-control" id="subject" name="subject" placeholder="Sujet" required="">
+            </div>
+            <div class="form-group">
+              <textarea class="form-control" id="message" placeholder="Message" maxlength="140" rows="4"></textarea>
+              <div class="form-text text-muted">
+              </div>
+            </div>
+            <button type="button" id="submit" name="submit" class="btn btn-primary float-right">Envoyer</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</body>
+<app-footer></app-footer>
