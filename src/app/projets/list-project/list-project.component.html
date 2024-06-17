@@ -33,26 +33,29 @@
                             <th scope="col">Date de fin </th>
                             <th scope="col">Description </th>
                             <th scope="col">Responsable</th>
+                            
                             <th class="text-center" colspan="2">Action</th>
 
                         </tr>
                     </thead>
                     <tbody>
-                        <tr *ngFor="let item ">
-                            <td>{{item.ID}}</td>
-                            <td>{{item.NomProjet}}</td>
-                            <td>{{item.DateD}}</td>
-                            <td>{{item.DateF}}</td>
-                            <td>{{item.Description}}</td>
-                            <td>{{item.Responsable}}</td>
-                            <td colspan="2">
+                        <tr *ngFor="let item of projects ">
+                            <td>{{item.idProject}}</td>
+                            <td>{{item.name}}</td>
+                            <td>{{item.datedebut | date}}</td>
+                            <td>{{item.dateFin | date}}</td>
+                            <td>{{item.description}}</td>
+                            <td>{{item.user ? item.user.fullName : 'No user assigned'}} </td>
+                            
+
+                            <td colspan="2" style="text-align: center;">
                                 <div class="btn-toolbar ">
 
                                     <button class="btn btn-warning">
-                                        <i class="fa fa-pencil-square-o"></i></button>
+                                        <i class="fa fa-pencil-square-o" (click) = update(item.idProject)  > Modfier</i></button>
                                     <div class="espace"></div>
-                                    <button class="btn btn-danger " >
-                                        <i class="fa fa-trash-o"></i></button>
+                                    <button class="btn btn-danger "  (click) =  delete(item.idProject)  >
+                                        <i class="fa fa-trash-o"> Supprimer</i></button>
 
                                 </div>
                             </td>

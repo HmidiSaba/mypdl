@@ -21,13 +21,16 @@ import { ContactComponent } from './contact/contact.component';
 const routes: Routes = [//{
   //path: '', component: MenuComponent, canActivate: [AuthGuard],children: [
 
+  {path: '', component: DashboardCollabComponent},
   {path: 'home', component: HomeComponent},
   {path: 'about', component: AboutComponent},
   {path: 'projet', component: AddProjectComponent},
+  {path: 'projet/:id', component: AddProjectComponent},
   {path: 'listprojet', component: ListProjectComponent},
   {path: 'addCollab', component: AddCollabComponent},
   {path: 'listcollab', component: ListCollabComponent},
   {path: 'equipe', component: EquipeComponent},
+  {path: 'equipe/:id', component: EquipeComponent},
   {path: 'listequipe', component: ListequipeComponent},
   {path: 'dashboard', component: DashboardComponent},
   {path: 'dashboardCollab', component: DashboardCollabComponent},

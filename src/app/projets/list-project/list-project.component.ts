@@ -5,6 +5,9 @@ import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { AddProjectComponent } from '../add-project/add-project.component';
 import { ProjetService } from 'src/app/service/projet.service';
+import { Project2Service } from 'src/app/service/project2.service';
+
+
 
 @Component({
   selector: 'app-list-project',
@@ -16,15 +19,33 @@ import { ProjetService } from 'src/app/service/projet.service';
 export class ListProjectComponent implements OnInit {
   SearchText :any;
   title: any;
+  projects  : any[] = [];
   constructor(public crudApi:ProjetService,
-    private router: Router, public fb: FormBuilder,
+    private project2Srevice:  Project2Service,
+    private router: Router, public fb: 
+    FormBuilder,
     private matDialog: MatDialog,
     ) { }
 
   ngOnInit() {
     this.title = "Liste des projets";
+    this.getProjects();
 
-
+  }
+  getProjects(): void {
+  /*  this.projectService.getProjects().subscribe(
+      (data: Project[]) => {
+        this.projects = data;
+      },
+      error => {
+        console.error('Error fetching projects', error);
+      }
+    );*/
+    this.project2Srevice.getProjects().subscribe(data => {
+      console.log("ici data :" , data);
+      this.projects = data;
+      
+    } )
   }
 
   addProjet() {
@@ -35,6 +56,16 @@ export class ListProjectComponent implements OnInit {
     dialogConfig.width = "70%";
     this.matDialog.open(AddProjectComponent, dialogConfig);
   }
+
+   delete(id: any){
+   this.project2Srevice.deleteProject(id).subscribe(data => {
+    this.ngOnInit();
+   })
+   }
+
+    update(id: any){
+       this.router.navigate(['/projet', id])
+   }
 }
 
 

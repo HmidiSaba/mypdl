@@ -6,26 +6,18 @@
     </mat-toolbar>
     <hr> </div>
       <div class="card-body">
-      <form>
-      <input  type="hidden"  class="form-control" formControlName="id">
-      <input  type="hidden"  class="form-control" formControlName="codeEnseignant">
-     
-      <div class="form-group">
-          <label><strong>ID : </strong></label>
-          <input  type="text"  class="form-control" formControlName="ID" id="ID" readonly>
-      </div>  
+      <form [formGroup]="equipeForm" (ngSubmit)="addEquipe()">
+      <input  type="hidden"  class="form-control" formControlName="id_eq">
+      
       
       <div class="form-group">
         <label>Nom d'equipe</label>
-      <input  type="text"  class="form-control" formControlName="NomEquipe"  id="NomEquipe">
+      <input  type="text"  class="form-control" formControlName="nomEquipe"  id="NomEquipe">
       </div>
-      <div class="form-group">
-        <label>Nombre d'equipe</label>
-      <input  type="text"  class="form-control" formControlName="NombreEquipe"  id="NombreEquipe">
-      </div>
+      
       <div class="form-group">
         <label>Nom de projet</label>
-      <input  type="text"  class="form-control" formControlName="NomProjet"  id="NomProjet">
+      <input  type="text"  class="form-control" formControlName="projectName"  id="NomProjet">
       </div>
       
       
@@ -35,17 +27,12 @@
         <thead class="thead-light">
           <th>ID</th>
           <th>Nom d'equipe</th>
-          <th>Nombre d'equipe</th>
           <th>Nom de projet</th> 
-          <th>
-            <a class="btn btn-sm btn-success text-black">
-                <i class="icon-add_box"></i>Ajouter </a>
-          </th>
+          
         </thead>
         <tbody>
             <tr >
                 <td class="font-italic text-center" colspan="5">
-                  Aucune Note sélectionnée ...
                 </td>
               </tr>
           <tr>
